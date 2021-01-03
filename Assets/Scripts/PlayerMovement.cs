@@ -33,19 +33,25 @@ public class PlayerMovement : MonoBehaviour
         // Move left
         if (Input.GetKey("a"))
         {
-            rb.AddForce(xMovement * Time.deltaTime, 0, 0);
+            rb.AddForce(-xMovement * Time.deltaTime, 0, 0);
         }
 
         // Move right
         if (Input.GetKey("d"))
         {
-            rb.AddForce(-xMovement * Time.deltaTime, 0, 0);
+            rb.AddForce(xMovement * Time.deltaTime, 0, 0);
         }
 
-        // Fly Up
+        // Fly up
         if (Input.GetKey(KeyCode.UpArrow))
         {
             rb.AddForce(0, yMovement * Time.deltaTime, 0);
+        }
+
+        // Fly down
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            rb.AddForce(0, -yMovement * Time.deltaTime, 0);
         }
     }
 }
